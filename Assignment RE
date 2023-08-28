@@ -1,0 +1,114 @@
+import re
+text='Python exercises, PHP exercises.'
+match= re.sub(r"\s", ":", text)
+print(match)
+
+Texts= "The following e:xample creates an ArrayList with a capacity of 50 elements. Four elements are then added to the ArrayList and the ArrayList is trimmed accordingly."
+match= re.findall("[aeAE]\w+", Texts)
+print(match)    
+
+Str_1= "The following example creates an ArrayList with a capacity of 50 elements. Four elements are then added to the ArrayList and the ArrayList is trimmed accordingly."
+pattern= (r'\w{4}+')
+regex_pattern= re.compile(pattern)
+print(type(regex_pattern))
+
+import re
+Str_2= "My name is Arun from India. What about your name sir?"
+str_pattern= r"^\w{4}"
+regex_pattern= re.compile(str_pattern)
+result= regex_pattern.findall(Str_2)
+print(result)
+
+import re
+text = 'The quick brown fox jumps over the lazy dog.'
+String= r"\b\w{3,5}\b", text
+regex_pattern= re.compile(String)
+print(regex_pattern)
+
+import re
+text = 'The quick brown fox jumps over the lazy dog.'
+print(re.findall(r"\b\w{4}\b", text))
+
+import re
+items =["example (.com)", "hr@fliprobo (.com)", "github (.com)", "Hello (Data Science World)", "Data (Scientist)"]
+for item in items:
+    print(re.sub(r" ?\([^)]+\)", "", item))
+
+    import re
+# Input.
+text = "The following example creates an ArrayList with a capacity of 50 elements. Four elements are then added to the ArrayList and the ArrayList is trimmed accordingly."
+#find all the words starting with 'a' or 'e'
+list = re.findall("[ae]\w+", text)
+# Print result.
+print(list)
+
+string = "Ron was born on 12-09-1992 and he was addmited to school 15-12-1999"
+pattern = "\d{2}-\d{2}-\d{4}"                          # we will use  while card specil character
+me = re.findall(pattern, string)
+print(me)
+
+text = "@Jaggesh2 Bharat band on 28??<ed><U+00A0><U+00BD><ed><U+00B8><U+0082>Those who  are protesting #demonetization  are all different party leaders"
+clean_text = re.sub(r"<U\+[A-Z0-9]+>", "", text)
+print("Text before:\n", text)
+print("Text after:\n", clean_text)
+
+text= "RT @kapil_kausik: #DeMonetization survey results after 24 hours 5Lacs opinions Amazing response &amp; Commitment in fight against Blackmoney"
+clean_text = re.sub(r"&amp;", "&", text)
+print("Text before:\n", text)
+print("Text after:\n", clean_text)
+
+import re
+
+def Remove_Duplicates(Test_string):
+      Pattern = r"\b(\w+)(?:\W\1\b)+"
+      return re.sub(Pattern, r"\1", Test_string, flags=re.IGNORECASE)
+Test_string1 = "Hello hello world world"
+print(Remove_Duplicates(Test_string1))
+
+
+import re
+text = 'Python exercises, PHP exercises, C# exercises'
+pattern = 'exercises'
+for match in re.findall(pattern, text):
+    print('Found "%s"' % match)
+
+   
+   
+   import re
+ip = "216.08.094.196"
+string = re.sub('\.[0]*', '.', ip)
+print(string)
+
+import re
+def match_num(string):
+    text = re.compile(r"^5")
+    if text.match(string):
+        return True
+    else:
+        return False
+print(match_num('5-2345861'))
+print(match_num('6-2345861'))
+
+import re
+def text_match(text):
+        patterns = '^[a-zA-Z0-9_]*$'
+        if re.search(patterns,  text):
+                return 'Found a match!'
+        else:
+                return('Not matched!')
+
+print(text_match("The quick brown fox jumps over the lazy dog."))
+print(text_match("Python_Exercises_1"))
+
+import re
+text ="Hello my name is Data Science and my email address is xyz@domain.com and alternate email address is xyz.abc@sdomain.domain.com."
+emails = re.findall(r"[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+\.[a-z]+", text)
+print(emails)
+
+import re
+text = "ImportanceOfRegularExpressionsInPython”
+print(re.findall('[A-Z][^A-Z]*', text))
+
+import re
+text = "ImportanceOfRegularExpressionsInPython”
+re.sub(r"(\w)([A-Z])", r"\1 \2", text)
